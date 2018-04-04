@@ -9,8 +9,15 @@ License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
-.container-fluid{
-    background-color: #ffffff;
+.cm-absolute{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container{
+    margin-top: 20px !important;
 }
 #video-background{
     object-fit: cover;
@@ -44,10 +51,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 }
 
 .header-social{
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
     z-index: 0;
 }
 
@@ -86,11 +89,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
     color: #ffffff;
 }
 
-.logged-in {
-    //padding-top: 32px;
-}
-
-#photos {
+.xPhotos {
     /* Prevent vertical gaps */
     line-height: 0;
 
@@ -102,7 +101,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
     column-gap:           0px;
 }
 
-#photos img {
+.xPhotos img {
     /* Just in case there are inline attributes */
     width: 100% !important;
     height: auto !important;
@@ -110,30 +109,89 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 }
 
 @media (max-width: 1200px) {
-    #photos {
+    .xPhotos {
         -moz-column-count:    4;
         -webkit-column-count: 4;
         column-count:         4;
     }
 }
 @media (max-width: 1000px) {
-    #photos {
+    .xPhotos {
         -moz-column-count:    3;
         -webkit-column-count: 3;
         column-count:         3;
     }
 }
 @media (max-width: 800px) {
-    #photos {
+    .xPhotos {
         -moz-column-count:    2;
         -webkit-column-count: 2;
         column-count:         2;
     }
 }
 @media (max-width: 400px) {
-    #photos {
+    .xPhotos {
         -moz-column-count:    1;
         -webkit-column-count: 1;
         column-count:         1;
+    }
+}
+
+
+/* The Overlay (background) */
+.xOverlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */
+    height: 100%;
+    width: 0;
+    position: fixed; /* Stay in place */
+    z-index: 99999; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: rgb(0,0,0); /* Black fallback color */
+    background-color: rgba(0,0,0, 0.95); /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content input[type=search]{
+    width: 380px;
+}
+
+/* The navigation links inside the overlay */
+.xOverlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.xOverlay a:hover, .xOverlay a:focus {
+    color: #f1f1f1;
+}
+
+/* Position the close button (top right corner) */
+.xOverlay .btnOverlayClose {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+
+.xOverlay #xSearch,
+.xOverlay #xBook{
+    display: none;
+}
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+    .xOverlay a {font-size: 20px}
+    .xOverlay .btnOverlayClose {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
     }
 }
