@@ -4,6 +4,7 @@ function init_script_css() {
 
     /* Initialise css */
 
+    wp_enqueue_style( "google_font", "//fonts.googleapis.com/css?family=Lato:300,400,600");
     wp_enqueue_style( "fancybox_stylesheet", "https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css");
     wp_enqueue_style( "boostrap_stylesheet", "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css");
     wp_enqueue_style( "fontawesome_stylesheet", "https://use.fontawesome.com/releases/v5.0.8/css/all.css");

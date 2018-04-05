@@ -19,11 +19,6 @@
         </div>
         <div class="col text-right">
             <?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) );?>
-<!--            <ul>-->
-<!--                <li><a class="anchor-tag" href="#home">home</a></li>-->
-<!--                <li><a class="anchor-tag" href="#photography">photography</a></li>-->
-<!--                <li><a class="anchor-tag" href="#cinematography">cinematography</a></li>-->
-<!--            </ul>-->
         </div>
     </div>
     <div class="header-social row cm-absolute">
