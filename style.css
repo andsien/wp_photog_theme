@@ -14,6 +14,7 @@ body
     font-family: "Lato";
     color: #585553;
     letter-spacing: 0.15em !important;
+    font-size: 12px;
 }
 
 .btn{
@@ -24,7 +25,7 @@ h1,h2{
     font-weight: 300;
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    margin: 2em 0;
+    margin: 30px 0;
     padding: 0;
     font-size: 2rem;
 }
@@ -35,7 +36,7 @@ h1,h2{
 
 .cm-absolute{
     position: absolute;
-    left: 50%;
+    left: 51%;
     top: 50%;
     transform: translate(-50%, -50%);
 }
@@ -45,30 +46,25 @@ h1,h2{
     z-index: -1;
 }
 .header-overlay{
-    background: #0000008c url(http://s14.directupload.net/images/111129/44ga9qid.png);
+    /*background: #0000008c url("assets/images/dot.png");*/
     height: 100vh;
     position: relative;
 }
 
-.header-overlay .logo{
-    position: fixed;
-    top: 0px;
-    width: 350px;
-    z-index: 3;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
+.xPhotosLogo{
+    width: 220px;
+    padding: 10px;
 }
 
 .header{
     width: 100%;
     position: fixed;
     top: 0px;
-    background-color: #000000c7;
+    background-color: #ffffff;
     padding: 0px;
     margin: 0px;
     z-index: 2;
+    box-shadow: 0 3px 1px -2px #80808059
 }
 
 .header-social{
@@ -79,7 +75,7 @@ h1,h2{
 .header-social ul{
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 6px 0 0 0;
 }
 
 .header-social ul li {
@@ -103,9 +99,12 @@ h1,h2{
     text-decoration: none;
 }
 
+.header ul li a{
+    color: #585553;
+}
+
 .header-social h1,
 .header-social h3,
-.header ul li a,
 .header-social ul li a{
     color: #ffffff;
 }
@@ -197,15 +196,15 @@ h1,h2{
     z-index: 99999; /* Sit on top */
     left: 0;
     top: 0;
-    background-color: rgb(0,0,0); /* Black fallback color */
-    background-color: rgba(0,0,0, 0.95); /* Black w/opacity */
-    overflow-x: hidden; /* Disable horizontal scroll */
+    background-color: #ffffff;
+    overflow: hidden;
     transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
 }
 
 /* Position the content inside the overlay */
 .overlay-content input[type=search]{
     width: 380px;
+    border-color: #343a40;
 }
 
 /* The navigation links inside the overlay */
@@ -220,7 +219,7 @@ h1,h2{
 
 /* When you mouse over the navigation links, change their color */
 .xOverlay a:hover, .xOverlay a:focus {
-    color: #f1f1f1;
+    color: #585553;
 }
 
 /* Position the close button (top right corner) */
@@ -254,4 +253,13 @@ h1,h2{
     background-color: #eee;
     left: 0px;
     z-index: -1;
+}
+
+.xphoto-footer img{
+    width: 200px;
+    margin-bottom: 20px;
+}
+.xphoto-footer{
+    background-color: #b9b9b9;
+    padding: 40px 0;
 }

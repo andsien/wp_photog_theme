@@ -1,47 +1,67 @@
 <?php
+/**
+ * The main template file
+ *
+ * This is the most generic template file in a WordPress theme
+ * and one of the two required files for a theme (the other being style.css).
+ * It is used to display a page when nothing more specific matches a query.
+ * E.g., it puts together the home page when no home.php file exists.
+ *
+ * @link https://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package WordPress
+ * @subpackage Twenty_Seventeen
+ * @since 1.0
+ * @version 1.0
+ */
 
-get_header();
+get_header(); ?>
 
-    if ( have_posts() ) :
-        while ( have_posts() ) : the_post();
-            if ( get_post_gallery() &&  $cat[0]->slug != "uncategorized") : ?>
+    <div class="wrap">
+        <?php if ( is_home() && ! is_front_page() ) : ?>
+            <header class="page-header">
+                <h1 class="page-title"><?php single_post_title(); ?></h1>
+            </header>
+        <?php else : ?>
+            <header class="page-header">
+                <h2 class="page-title"><?php _e( 'Posts', 'twentyseventeen' ); ?></h2>
+            </header>
+        <?php endif; ?>
+
+        <div id="primary" class="content-area">
+            <main id="main" class="site-main" role="main">
+
                 <?php
-                $gallery = get_post_gallery( get_the_ID(), false );
-                $ids = explode( ",", $gallery['ids'] );
-                $cat = get_the_category(get_the_ID());
+                if ( have_posts() ) :
+
+                    /* Start the Loop */
+                    while ( have_posts() ) : the_post();
+
+                        /*
+                         * Include the Post-Format-specific template for the content.
+                         * If you want to override this in a child theme, then include a file
+                         * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+                         */
+                        get_template_part( 'template-parts/post/content', get_post_format() );
+
+                    endwhile;
+
+//                    the_posts_pagination( array(
+//                        'prev_text' => twentyseventeen_get_svg( array( 'icon' => 'arrow-left' ) ) . '<span class="screen-reader-text">' . __( 'Previous page', 'twentyseventeen' ) . '</span>',
+//                        'next_text' => '<span class="screen-reader-text">' . __( 'Next page', 'twentyseventeen' ) . '</span>' . twentyseventeen_get_svg( array( 'icon' => 'arrow-right' ) ),
+//                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentyseventeen' ) . ' </span>',
+//                    ) );
+
+                else :
+
+                    get_template_part( 'template-parts/post/content', 'none' );
+
+                endif;
                 ?>
 
-                <div class="container-fluid">
-                    <div class="row">
-
-                        <div class="xPhotos-container">
-                            <h2 data-aos="fade-right" id="<?php echo $cat[0]->slug; ?>"><?php echo $cat[0]->name; ?></h2>
-                            <div class="xPhotos">
-
-                            <?php
-                            foreach($ids as $id ) :
-                                $limg = wp_get_attachment_image_src( $attachment_id = $id, $size = "large");
-                                $mimg = wp_get_attachment_image_src( $attachment_id = $id, $size = "medium");
-                                ?>
-                                <a daata-aos="zoom-out-up" data-fancybox="photo-gallery" href="<?php echo $limg[0]; ?>">
-                                    <img src="<?php echo $mimg[0]; ?>" alt="Photography">
-                                </a>
-
-                            <?php
-                            endforeach;?>
-
-                            </div>
-                        </div>
-                        <div class="container-buttom-bg"></div>
-                        <div class="xPhotos-more"><a data-aos="flip-left" class="btn btn-outline-dark btn-lg" href="#" role="button">View More</a></div>
-                    </div>
-                </div>
-            <?php
-            endif;
-        endwhile;
-    else :
-        get_template_part( 'template-parts/content', 'none' );
-    endif;
-?>
+            </main><!-- #main -->
+        </div><!-- #primary -->
+        <?php get_sidebar(); ?>
+    </div><!-- .wrap -->
 
 <?php get_footer();

@@ -4,15 +4,15 @@
 
 $(document).ready(function(){
 
-    var $scrollingDiv = $(".header-overlay .logo"),
-        defaultWidth = parseInt($scrollingDiv.css('width')); // whatever is in your css as
-    $(window).scroll(function() {
-        var winScrollTop = $(window).scrollTop(),
-            zeroSizeHeight = $(".header-overlay").height(),
-            newSize = defaultWidth * (1 - (winScrollTop / zeroSizeHeight));
-
-         if(newSize > 122) $scrollingDiv.css("width", newSize);
-    });
+    //var $scrollingDiv = $(".header-overlay .logo"),
+    //    defaultWidth = parseInt($scrollingDiv.css('width')); // whatever is in your css as
+    //$(window).scroll(function() {
+    //    var winScrollTop = $(window).scrollTop(),
+    //        zeroSizeHeight = $(".header-overlay").height(),
+    //        newSize = defaultWidth * (1 - (winScrollTop / zeroSizeHeight));
+    //
+    //     if(newSize > 122) $scrollingDiv.css("width", newSize);
+    //});
 
     $(document).on('click', '#menu-main-menu li a', function (e) {
         e.preventDefault();
