@@ -16,7 +16,7 @@ if ( have_posts() ) :
                 <div class="row">
 
                     <div class="xPhotos-container">
-                        <h2 data-aos="fade-right" id="<?php echo $cat[0]->slug; ?>"><?php echo $cat[0]->name; ?></h2>
+                        <h3 data-aos="fade-right" id="<?php echo $cat[0]->slug; ?>"><?php echo $cat[0]->name; ?></h3>
                         <div class="xPhotos">
 
                             <?php
@@ -34,7 +34,7 @@ if ( have_posts() ) :
                         </div>
                     </div>
                     <div class="container-buttom-bg"></div>
-                    <div class="xPhotos-more"><a data-aos="flip-left" class="btn btn-outline-dark btn-lg" href="<?php echo $permalink; ?>" role="button">View More</a></div>
+                    <div class="xPhotos-more"><a data-aos="flip-left" class="btn btn-outline-dark btn-lg" href="<?php echo $permalink; ?>" role="button">View More <?php echo $cat[0]->name; ?></a></div>
                 </div>
             </div>
         <?php

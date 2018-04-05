@@ -31,6 +31,7 @@
         <div class="col-4 text-left">
             <ul>
                 <li><a class="btnOverlayOpen" href="#" data-overlay="xSearch"><i class="fas fa-search"></i></a></li>
+                <li><a style="display: none" class="xPhotosBook btnOverlayOpen" href="#" data-overlay="xBook">Book Now</a></li>
             </ul>
         </div>
         <div class="col-4 text-center">

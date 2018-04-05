@@ -14,6 +14,16 @@ $(document).ready(function(){
     //     if(newSize > 122) $scrollingDiv.css("width", newSize);
     //});
 
+
+    $(window).scroll(function() {
+        console.log($(".header-overlay").height());
+        if ($(this).scrollTop() > ($(".header-overlay").height() - 60)) {
+            $(".xPhotosBook").fadeIn();
+        } else {
+            $(".xPhotosBook").fadeOut();
+        }
+    });
+
     $(document).on('click', '#menu-main-menu li a', function (e) {
         e.preventDefault();
 

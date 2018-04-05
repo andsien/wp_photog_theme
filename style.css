@@ -11,7 +11,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 body
 {
-    font-family: "Lato";
+    font-family: "Lato" !important;
     color: #585553;
     letter-spacing: 0.15em !important;
     font-size: 12px;
@@ -21,13 +21,12 @@ body
     text-transform: uppercase;
 }
 
-h1,h2{
+h1,h2,h3,h4{
     font-weight: 300;
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    margin: 30px 0;
+    margin: 30px 0 20px 0;
     padding: 0;
-    font-size: 2rem;
 }
 
 .container-fluid{
@@ -256,10 +255,13 @@ h1,h2{
 }
 
 .xphoto-footer img{
-    width: 200px;
+    width: 150px;
     margin-bottom: 20px;
 }
 .xphoto-footer{
     background-color: #b9b9b9;
     padding: 40px 0;
+}
+.xphoto-footer p{
+    margin:0;
 }
