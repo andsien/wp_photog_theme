@@ -14,53 +14,30 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<header class="entry-header">
+    <?php
+    $gallery = get_post_gallery( get_the_ID(), false );
+    $ids = explode( ",", $gallery['ids'] );
+    $cat = get_the_category(get_the_ID());
+    $permalink = get_post_permalink(get_the_ID());
+    ?>
 
-        <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+    <div class="xPhotos-container">
+        <h3 data-aos="fade-right" id="<?php echo $cat[0]->slug; ?>"><?php echo $cat[0]->name; ?></h3>
+        <div class="xPhotos">
 
-	</header>
+            <?php
+            foreach($ids as $id ) :
+                $limg = wp_get_attachment_image_src( $attachment_id = $id, $size = "large");
+                $mimg = wp_get_attachment_image_src( $attachment_id = $id, $size = "medium");
+                ?>
+                <a data-fancybox="photo-gallery" href="<?php echo $limg[0]; ?>">
+                    <img data-aos="flip-right" src="<?php echo $mimg[0]; ?>" alt="Photography">
+                </a>
 
-	<?php if ( '' !== get_the_post_thumbnail() && ! is_single() && ! get_post_gallery() ) : ?>
-		<div class="post-thumbnail">
-			<a href="<?php the_permalink(); ?>">
-				<?php the_post_thumbnail( 'twentyseventeen-featured-image' ); ?>
-			</a>
-		</div><!-- .post-thumbnail -->
-	<?php endif; ?>
+            <?php
+            endforeach;?>
 
-	<div class="entry-content">
+        </div>
+    </div>
 
-		<?php
-		if ( ! is_single() ) {
-
-			// If not a single post, highlight the gallery.
-			if ( get_post_gallery() ) {
-				echo '<div class="entry-gallery">';
-					echo get_post_gallery();
-				echo '</div>';
-			};
-
-		};
-
-		if ( is_single() || ! get_post_gallery() ) {
-
-			/* translators: %s: Name of current post */
-			the_content( sprintf(
-				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'twentyseventeen' ),
-				get_the_title()
-			) );
-
-			wp_link_pages( array(
-				'before'      => '<div class="page-links">' . __( 'Pages:', 'twentyseventeen' ),
-				'after'       => '</div>',
-				'link_before' => '<span class="page-number">',
-				'link_after'  => '</span>',
-			) );
-
-		};
-		?>
-
-	</div><!-- .entry-content -->
-
-
-</article><!-- #post-## -->
+</article>
