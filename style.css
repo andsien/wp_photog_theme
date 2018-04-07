@@ -276,6 +276,19 @@ h1,h2,h3,h4{
     margin-top: 60px;
 }
 
+.xphoto-footer ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.xphoto-footer ul li{
+    display: inline-block;
+    text-transform: uppercase;
+    padding: 15px;
+    font-size: 12px;
+}
+
 .underline {
     display: inline;
     position: relative;
@@ -300,17 +313,4 @@ h1,h2,h3,h4{
     left: 0;
     right: auto;
     width: 100%;
-}
-
-.xphoto-footer ul{
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.xphoto-footer ul li{
-    display: inline-block;
-    text-transform: uppercase;
-    padding: 15px;
-    font-size: 12px;
 }
