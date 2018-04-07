@@ -35,10 +35,27 @@
             </ul>
         </div>
         <div class="col-4 text-center">
-            <img class="xPhotosLogo" src="<?php echo get_template_directory_uri() ?>/assets/images/logo.png?sdsd">
+            <a href="<?php echo get_home_url(); ?>">
+                <img class="xPhotosLogo" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png">
+            </a>
         </div>
         <div class="col-4 text-right">
-            <?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) );?>
+            <?php if ( is_front_page() ) : ?>
+            <ul id="menu-main-menu">
+            <?php else: ?>
+            <ul>
+            <?php endif;
+                $menus = wp_get_nav_menu_items( 'main-menu' );
+                foreach($menus as $menu) : ?>
+                    <?php //die(print_r($menu)) ?>
+                    <?php if ( is_front_page() ) : ?>
+                    <li><a class="underline" href="#<?php echo strtolower($menu->title); ?>"><?php echo $menu->title; ?></a></li>
+                    <?php else: ?>
+                    <li><a class="underline" href="<?php echo $menu->url; ?>"><?php echo $menu->title; ?></a></li>
+                    <?php endif; ?>
+                <?php
+                endforeach;?>
+            </ul>
         </div>
     </div>
 </div>

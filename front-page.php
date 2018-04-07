@@ -16,7 +16,7 @@ if ( have_posts() ) :
                 <div class="row">
 
                     <div class="xPhotos-container">
-                        <h3 data-aos="fade-right" id="<?php echo $cat[0]->slug; ?>"><?php echo $cat[0]->name; ?></h3>
+                        <h3 data-aos="fade-right" id="<?php echo strtolower(get_the_title()); ?>"><a class="underline" href="<?php echo $permalink; ?>"><?php echo get_the_title(); ?></a></h3>
                         <div class="xPhotos">
 
                             <?php
@@ -44,5 +44,4 @@ else :
     get_template_part( 'template-parts/content', 'none' );
 endif;
 ?>
-
 <?php get_footer();

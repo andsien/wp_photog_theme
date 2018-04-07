@@ -17,6 +17,12 @@ body
     font-size: 12px;
 }
 
+a,
+a:hover{
+    text-decoration: none !important;
+    color: #585553;
+}
+
 .btn{
     text-transform: uppercase;
 }
@@ -267,5 +273,31 @@ h1,h2,h3,h4{
 }
 
 .container-post{
-    margin-top: 30px;
+    margin-top: 60px;
+}
+
+.underline {
+    display: inline;
+    position: relative;
+    overflow: hidden;
+}
+.underline:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    width: 0;
+    bottom: -5px;
+    background: #585553;
+    height: 2px;
+    transition-property: width;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+}
+.underline:hover:after,
+.underline:focus:after,
+.underline:active:after {
+    left: 0;
+    right: auto;
+    width: 100%;
 }

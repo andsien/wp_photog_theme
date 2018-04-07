@@ -28,7 +28,7 @@ function register_my_menus() {
     register_nav_menus(
         array(
             'header-menu' => __( 'Header Menu' ),
-            'extra-menu' => __( 'Extra Menu' )
+            'footer-menu' => __( 'Footer Menu' )
         )
     );
 }
@@ -43,8 +43,8 @@ function arphabet_widgets_init() {
         'id'            => 'home_right_1',
         'before_widget' => '<div>',
         'after_widget'  => '</div>',
-        'before_title'  => '<h2 class="rounded">',
-        'after_title'   => '</h2>',
+        'before_title'  => '<h3>',
+        'after_title'   => '</h3>',
     ) );
 
 }
