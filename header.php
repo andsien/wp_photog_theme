@@ -54,7 +54,7 @@
                     <li><a class="underline" href="<?php echo $menu->url; ?>"><?php echo $menu->title; ?></a></li>
                     <?php endif; ?>
                 <?php
-                endforeach;?>
+            endforeach;?>
             </ul>
         </div>
     </div>

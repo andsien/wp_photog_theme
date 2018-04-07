@@ -301,3 +301,16 @@ h1,h2,h3,h4{
     right: auto;
     width: 100%;
 }
+
+.xphoto-footer ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.xphoto-footer ul li{
+    display: inline-block;
+    text-transform: uppercase;
+    padding: 15px;
+    font-size: 12px;
+}
