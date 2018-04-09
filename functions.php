@@ -34,7 +34,7 @@ function register_my_menus() {
 }
 add_action( 'init', 'register_my_menus' );
 
-add_theme_support( 'post-formats', array( 'aside', 'gallery', 'image', 'video'  ) );
+add_theme_support( 'post-formats', array('gallery', 'video' ) );
 
 function arphabet_widgets_init() {
 
@@ -49,3 +49,45 @@ function arphabet_widgets_init() {
 
 }
 add_action( 'widgets_init', 'arphabet_widgets_init' );
+
+function xphotography_settings(){
+    ?>
+    <div class="wrap">
+        <h1>xPhotography Settings</h1>
+        <form method="post" action="options.php">
+            <?php
+            settings_fields("section");
+            do_settings_sections("theme-options");
+            submit_button();
+            ?>
+        </form>
+    </div>
+<?php
+}
+
+function add_theme_menu_item()
+{
+    add_menu_page("xPhotography Settings", "xPhotography", "manage_options", "xphotography", "xphotography_settings", null, 99);
+}
+
+add_action("admin_menu", "add_theme_menu_item");
+
+function get_video_ids($content){
+    $ids = explode("[/videos]",$content);
+    $ids = str_replace("[videos]","",$ids[0]);
+
+    if($ids != "0") $ids = explode(",", $ids);
+
+    return $ids;
+}
+
+function getUrl($content){
+    $url = explode("[/embed]",$content);
+    $url = str_replace("[embed]","",$url[0]);
+    $thumb = explode("watch?v=",$url);
+
+    $thumb = "https://img.youtube.com/vi/".$thumb["1"]."/mqdefault.jpg";
+
+    return array("url" => $url, "thumb" => $thumb);
+
+}

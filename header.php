@@ -74,5 +74,9 @@
     </div>
     <div id="xBook" class="overlay-content cm-absolute">
         <h1>Book</h1>
+        <div class="row">
+            <div class="col-12"><?php echo do_shortcode( '[contact-form-7 id="128" title="Contact form 1"]' );
+?></div>
+        </div>
     </div>
 </div>

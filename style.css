@@ -14,7 +14,11 @@ body
     font-family: "Lato" !important;
     color: #585553;
     letter-spacing: 0.15em !important;
-    font-size: 12px;
+    font-size: 14px;
+}
+
+article{
+    width: 100%;
 }
 
 a,
@@ -314,3 +318,18 @@ h1,h2,h3,h4{
     right: auto;
     width: 100%;
 }
+
+.xPhotos-container iframe{
+    width: 100%;
+    height: 450px;
+}
+
+.card-p{
+    padding-top: 20px;
+}
+
+.card{
+    margin: 20px 0;
+}
+
+.xPhotos-container p{width: 100%;}
