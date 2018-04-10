@@ -4,23 +4,12 @@
 
 $(document).ready(function(){
 
-    //var $scrollingDiv = $(".header-overlay .logo"),
-    //    defaultWidth = parseInt($scrollingDiv.css('width')); // whatever is in your css as
-    //$(window).scroll(function() {
-    //    var winScrollTop = $(window).scrollTop(),
-    //        zeroSizeHeight = $(".header-overlay").height(),
-    //        newSize = defaultWidth * (1 - (winScrollTop / zeroSizeHeight));
-    //
-    //     if(newSize > 122) $scrollingDiv.css("width", newSize);
-    //});
-
-
     $(window).scroll(function() {
         console.log($(".header-overlay").height());
         if ($(this).scrollTop() > ($(".header-overlay").height() - 60)) {
-            $(".xPhotosBook").fadeIn();
+            $("#showHideBook").fadeIn();
         } else {
-            $(".xPhotosBook").fadeOut();
+            $("#showHideBook").fadeOut();
         }
     });
 
@@ -42,7 +31,7 @@ $(document).ready(function(){
     $(document).on('click', '.btnOverlayOpen', function (e) {
         e.preventDefault();
         $("#xPhotoOverlay").css("width", "100%");
-        $("#" + $(this).attr("data-overlay")).show();
+        $("#" + $(this).attr("data-overlay")).fadeIn(1800);
     });
 });
 

@@ -1,7 +1,7 @@
 <?php
 
 get_header(); ?>
-<div class="container container-post">
+<div class="container-fluid container-post">
     <div class="row">
         <?php if(is_active_sidebar("home_right_1")) : ?>
         <div class="col-2">
@@ -9,7 +9,7 @@ get_header(); ?>
         </div>
         <div class="col-10">
         <?php else : ?>
-        <div class="col-12">
+        <div class="col">
         <?php endif; ?>
 
             <?php
@@ -19,6 +19,11 @@ get_header(); ?>
                 while ( have_posts() ) : the_post();
 
                     get_template_part( 'template-parts/post/content', get_post_format() );
+
+                    if ( comments_open() || get_comments_number() ) : ?>
+                        <hr/>
+                        <?php comments_template(); ?>
+                    <?php endif;
 
                 endwhile;
 

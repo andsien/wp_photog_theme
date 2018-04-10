@@ -1,15 +1,12 @@
-<?php
-
-get_header(); ?>
 
 <div class="container container-post">
     <div class="row">
         <div class="col">
             <div class="xSearch-Container">
-                <h3 data-aos="fade-right">Oops! That page can&rsquo;t be found.</h3>
+                <h3 data-aos="fade-right">NOTHING FOUND</h3>
 
                 <div class="page-content">
-                    <p>It looks like nothing was found at this location. Maybe try a search?</p><br/>
+                    <p>It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.</p><br/>
 
                     <?php get_search_form(); ?>
 
@@ -18,6 +15,3 @@ get_header(); ?>
         </div>
     </div>
 </div>
-
-<?php get_footer();
-

@@ -33,9 +33,11 @@
                 <li><a class="btnOverlayOpen" href="#" data-overlay="xSearch"><i class="fas fa-search"></i></a></li>
                 <?php
                     $dnone = "";
-                    if ( is_front_page() ) $dnone = "display: none";
+                    if ( is_front_page() ) {
+                        $dnone = 'id="showHideBook" style="display: none"';
+                    }
                 ?>
-                <li><a style="<?php echo $dnone; ?>" class="xPhotosBook btnOverlayOpen" href="#" data-overlay="xBook">Book Now</a></li>
+                <li><a <?php echo $dnone; ?> class="xPhotosBook btnOverlayOpen" href="#" data-overlay="xBook">Book Now</a></li>
             </ul>
         </div>
         <div class="col-4 text-center">
@@ -67,13 +69,9 @@
 <div id="xPhotoOverlay" class="xOverlay">
     <a href="#" class="btnOverlayClose">&times;</a>
     <div id="xSearch" class="overlay-content cm-absolute">
-        <form class="form-inline">
-            <input class="form-control mr-sm-2 form-control-lg" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-lg btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
-        </form>
+        <?php get_search_form(); ?>
     </div>
     <div id="xBook" class="overlay-content cm-absolute">
-        <h1>Book</h1>
         <div class="row">
             <div class="col-12"><?php echo do_shortcode( '[contact-form-7 id="128" title="Contact form 1"]' );
 ?></div>

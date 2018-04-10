@@ -32,11 +32,11 @@ a:hover{
 }
 
 h1,h2,h3,h4{
-    font-weight: 300;
+    font-weight: 300 !important;
     text-transform: uppercase;
-    letter-spacing: 0.15em;
-    margin: 30px 0 20px 0;
-    padding: 0;
+    letter-spacing: 0.15em !important;
+    margin: 30px 0 20px 0 !important;
+    padding: 0 !important;
 }
 
 .container-fluid{
@@ -195,6 +195,50 @@ h1,h2,h3,h4{
     }
 }
 
+#respond form input[type=submit],
+#xBook form input[type=submit]{
+    color: #343a40;
+    background-color: transparent;
+    background-image: none;
+    border-color: #343a40;
+    padding: .5rem 1rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    border-radius: .3rem;
+}
+
+#respond form input[type=submit]:hover,
+#xBook form input[type=submit]:hover{
+    color:#ffffff;
+    background-color: #343a40;
+    cursor: pointer;
+}
+
+#respond form input[type=text],
+#respond form input[type=email],
+#respond form textarea,
+#xBook form textarea,
+#xBook form input[type=text],
+#xBook form input[type=email]{
+    width: 350px;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #343a40;
+    padding: .5rem 1rem;
+    font-size: 14px;
+    line-height: 1.5;
+    border-radius: .3rem;
+}
+
+#xBook form textarea{
+    height: 150px;
+}
+
+#xBook form{
+    width: 350px;
+}
+
 
 /* The Overlay (background) */
 .xOverlay {
@@ -211,9 +255,14 @@ h1,h2,h3,h4{
 }
 
 /* Position the content inside the overlay */
-.overlay-content input[type=search]{
-    width: 380px;
+.xsearch-form input[type=search]{
+    width: 350px;
     border-color: #343a40;
+}
+
+.xSearch-Container{
+    height: 40vh;
+    margin: 10% 15%;
 }
 
 /* The navigation links inside the overlay */
@@ -333,3 +382,32 @@ h1,h2,h3,h4{
 }
 
 .xPhotos-container p{width: 100%;}
+
+#respond h3,
+#comments h2{
+    font-size: 20px !important;
+}
+
+#comments .comment-body{
+    margin-top: 15px;
+}
+#comments .comment-author img{
+    border-radius: 5px;
+}
+
+#comments ol,
+#comments li{
+    list-style: none;
+}
+
+#respond form label{
+    width: 100px;
+}
+
+.xPhotos-comments{
+    padding-left: 12%;
+    padding-right: 12%;
+    padding-bottom: 40px;
+    position: relative;
+}
+
