@@ -268,7 +268,7 @@ h1,h2,h3,h4{
 }
 
 .xOverlay #xSearch,
-.xOverlay #xBook{
+.xOverlay #xBook,
 .xOverlay #xMenu{
     display: none;
 }

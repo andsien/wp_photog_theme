@@ -1,6 +1,6 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-    <div class="xPhotos-container">
+    <div class="xPhotos-container xPage">
 
         <?php if ( is_front_page() || (is_array(get_video_ids($post->post_content)) || get_video_ids($post->post_content) == "0")) :
             get_template_part( 'template-parts/post/content', "gallery-video" );
