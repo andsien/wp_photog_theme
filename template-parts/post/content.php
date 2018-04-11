@@ -10,7 +10,7 @@
         if ( is_front_page() ) : ?>
         <div class="container-buttom-bg"></div>
         <div class="xPhotos-more">
-            <a data-aos="flip-left" class="btn btn-outline-dark btn-lg" href="<?php echo get_post_permalink(get_the_ID()); ?>" role="button">View More <?php echo get_the_title(); ?></a>
+            <a data-aos="flip-left" class="btn btn-outline-dark btn-lg" href="<?php echo get_post_permalink(get_the_ID()); ?>" role="button">View More</a>
         </div>
     <?php endif; ?>
 </article>

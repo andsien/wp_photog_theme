@@ -23,7 +23,7 @@
             <?php
             foreach($ids as $id ) :
                 $limg = wp_get_attachment_image_src( $attachment_id = $id, $size = "large");
-                $mimg = wp_get_attachment_image_src( $attachment_id = $id, $size = "medium");
+                $mimg = wp_get_attachment_image_src( $attachment_id = $id, $size = "medium_large");
                 ?>
                 <a data-fancybox="photo-gallery" href="<?php echo $limg[0]; ?>">
                     <img data-aos="flip-right" src="<?php echo $mimg[0]; ?>" alt="Photography">
@@ -37,7 +37,7 @@
     <?php if ( is_front_page() ) : ?>
     <div class="container-buttom-bg"></div>
     <div class="xPhotos-more">
-        <a data-aos="flip-left" class="btn btn-outline-dark btn-lg" href="<?php echo $permalink; ?>" role="button">View More <?php echo get_the_title(); ?></a>
+        <a data-aos="flip-left" class="btn btn-outline-dark btn-lg" href="<?php echo $permalink; ?>" role="button">View More</a>
     </div>
     <?php endif; ?>
 </article>

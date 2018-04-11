@@ -39,6 +39,16 @@ h1,h2,h3,h4{
     padding: 0 !important;
 }
 
+#menu-main-menu{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#menu-main-menu li{
+    text-align: center;
+}
+
 .container-fluid{
     position: relative;
 }
@@ -69,7 +79,7 @@ h1,h2,h3,h4{
     width: 100%;
     position: fixed;
     top: 0px;
-    background-color: #ffffff;
+    background-color: #ffffffe6;
     padding: 0px;
     margin: 0px;
     z-index: 2;
@@ -156,7 +166,6 @@ h1,h2,h3,h4{
 }
 
 .xPhotos img {
-    /* Just in case there are inline attributes */
     width: 100% !important;
     height: auto !important;
     box-shadow: inset 0 1.5px 3px 0 rgba(0,0,0,.30), 0 1.5px 3px 0 rgba(0,0,0,.30);
@@ -166,35 +175,6 @@ h1,h2,h3,h4{
     opacity: 0.5;
 }
 
-@media (max-width: 1200px) {
-    .xPhotos {
-        -moz-column-count:    4;
-        -webkit-column-count: 4;
-        column-count:         4;
-    }
-}
-@media (max-width: 1000px) {
-    .xPhotos {
-        -moz-column-count:    3;
-        -webkit-column-count: 3;
-        column-count:         3;
-    }
-}
-@media (max-width: 800px) {
-    .xPhotos {
-        -moz-column-count:    2;
-        -webkit-column-count: 2;
-        column-count:         2;
-    }
-}
-@media (max-width: 400px) {
-    .xPhotos {
-        -moz-column-count:    1;
-        -webkit-column-count: 1;
-        column-count:         1;
-    }
-}
-
 #respond form input[type=submit],
 #xBook form input[type=submit]{
     color: #343a40;
@@ -202,7 +182,6 @@ h1,h2,h3,h4{
     background-image: none;
     border-color: #343a40;
     padding: .5rem 1rem;
-    font-size: 1.25rem;
     line-height: 1.5;
     border-radius: .3rem;
 }
@@ -409,5 +388,45 @@ h1,h2,h3,h4{
     padding-right: 12%;
     padding-bottom: 40px;
     position: relative;
+}
+
+@media (max-width: 576px) {
+    #respond form input[type=text],
+    #respond form input[type=email],
+    #respond form textarea,
+    #xBook form textarea,
+    #xBook form input[type=text],
+    #xBook form input[type=email]{
+        width: 300px !important;
+    }
+}
+
+@media (max-width: 1200px) {
+    .xPhotos {
+        -moz-column-count:    4;
+        -webkit-column-count: 4;
+        column-count:         4;
+    }
+}
+@media (max-width: 1000px) {
+    .xPhotos {
+        -moz-column-count:    3;
+        -webkit-column-count: 3;
+        column-count:         3;
+    }
+}
+@media (max-width: 800px) {
+    .xPhotos {
+        -moz-column-count:    2;
+        -webkit-column-count: 2;
+        column-count:         2;
+    }
+}
+@media (max-width: 400px) {
+    .xPhotos {
+        -moz-column-count:    1;
+        -webkit-column-count: 1;
+        column-count:         1;
+    }
 }
 

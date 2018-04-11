@@ -18,7 +18,7 @@
 
             ?>
 
-            <div class="col-4">
+            <div class="col-lg-4 col-md-6 col-sm-12">
                 <div data-aos="flip-up" class="card"">
                     <a data-fancybox="" data-width="640" data-height="360" href="<?php echo $content['url']; ?>">
                         <img class="card-img-top" src="<?php echo $content['thumb']; ?>">
@@ -55,7 +55,7 @@
 
             ?>
 
-                <div class="col-4">
+                <div class="col-lg-4 col-md-6 col-sm-12">
                     <div data-aos="flip-up" class="card"">
                         <a data-fancybox="" data-width="640" data-height="360" href="<?php echo $content['url']; ?>">
                             <img class="card-img-top" src="<?php echo $content['thumb']; ?>">
