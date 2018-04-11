@@ -132,7 +132,7 @@ function xphotography_settings(){
 
 function add_theme_menu_item()
 {
-    add_menu_page("xPhotography Settings", "xPhotography", "manage_options", "xphotography", "xphotography_settings", null, 99);
+    add_theme_page("xPhotography Settings", "xPhotography", "manage_options", "xphotography", "xphotography_settings", null, 99);
 }
 
 add_action("admin_menu", "add_theme_menu_item");
