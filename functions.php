@@ -18,7 +18,7 @@ function init_script_css() {
     wp_enqueue_script( "popper_script", "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js", array ( 'jquery' ), "1.12.9", true);
     wp_enqueue_script( "bootstrap_script", "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js", array ( 'jquery' ), "4.0.0", true);
     wp_enqueue_script( "aos_script", get_template_directory_uri() . "/assets/lib/aos/aos.js", array ( 'jquery' ), "1.0", true);
-    wp_enqueue_script( "xphotography_script", get_template_directory_uri() . "/assets/js/script.js", array ( 'jquery' ), "1.3", true);
+    wp_enqueue_script( "xphotography_script", get_template_directory_uri() . "/assets/js/script.js", array ( 'jquery' ), "1.4", true);
 
 }
 
@@ -146,13 +146,48 @@ function get_video_ids($content){
     return $ids;
 }
 
+function getFFmpageThumb($video)
+{
+    $ufile = explode('uploads', $video);
+
+    $basedir = wp_upload_dir();
+    $time = 3;
+    $infile = $basedir['basedir'] . "/2018/04/intro_website.mp4";
+    $tpath  = $basedir['basedir'] . "/2018/04/intro_website.mp4";
+    $thumbnail  = $basedir['baseurl'] . "/2018/04/intro_website_thumb.jpg";
+    //$thumbnail = 'my_thumbnail.png';
+
+    $cmd = sprintf(
+        'ffmpeg -i %s -ss %s -f image2 -vframes 1 -s 320x180 %s',
+        $infile, $time, $tpath
+    );
+
+    exec($cmd);
+
+    //die(print_r(wp_upload_dir()));
+
+    return $thumbnail;
+}
+
+function getThumb($url){
+
+    if (strpos($url, 'youtube') !== false) {
+        $thumb = explode("watch?v=",$url);
+        return "https://img.youtube.com/vi/".$thumb["1"]."/mqdefault.jpg";
+    }elseif(strpos($url, 'vimeo') !== false){
+
+    }else{
+        return getFFmpageThumb($url);
+    }
+}
+
 function getUrl($content){
     $url = explode("[/embed]",$content);
     $url = str_replace("[embed]","",$url[0]);
-    $thumb = explode("watch?v=",$url);
+    $embeds = get_media_embedded_in_content($content);
 
-    $thumb = "https://img.youtube.com/vi/".$thumb["1"]."/mqdefault.jpg";
+   // die(print_r($content));
 
-    return array("url" => $url, "thumb" => $thumb);
+    return array("url" => $url, "thumb" => getThumb($url));
 
 }
