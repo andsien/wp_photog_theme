@@ -138,12 +138,16 @@ function add_theme_menu_item()
 add_action("admin_menu", "add_theme_menu_item");
 
 function get_video_ids($content){
-    $ids = explode("[/videos]",$content);
-    $ids = str_replace("[videos]","",$ids[0]);
+    if (strpos($content, '[videos]') !== false) {
+        $ids = explode("[/videos]", $content);
+        $ids = str_replace("[videos]", "", $ids[0]);
 
-    if($ids != "0") $ids = explode(",", $ids);
+        if ($ids != "0") $ids = explode(",", $ids);
 
-    return $ids;
+        return $ids;
+    }else{
+        return false;
+    }
 }
 
 function getFFmpageThumb($video)

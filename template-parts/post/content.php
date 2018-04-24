@@ -1,11 +1,12 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
     <div class="xPhotos-container xPage">
+        <?php if (get_video_ids($post->post_content === false)) : ?>
+            <h3 data-aos="fade-right" id="<?php echo strtolower(get_the_title()); ?>"><?php echo get_the_title(); ?></h3>
+            <?php the_content();
 
-        <?php if ( is_front_page() || (is_array(get_video_ids($post->post_content)) || get_video_ids($post->post_content) == "0")) :
-            get_template_part( 'template-parts/post/content', "gallery-video" );
             else:
-                the_content();
+                get_template_part( 'template-parts/post/content', "gallery-video" );
             endif;
         if ( is_front_page() ) : ?>
         <div class="container-buttom-bg"></div>
